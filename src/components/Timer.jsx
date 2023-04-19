@@ -8,6 +8,9 @@ const Container = styled("div")(({ theme }) => ({
   padding: "30px",
   boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
   background: "linear-gradient(180deg, #0084ff  0%, #76d7ff 100%)",
+  [theme.breakpoints.down("sm")]: {
+    padding: "15px",
+  },
 }));
 
 const SecondContainer = styled("div")(({ theme }) => ({
@@ -17,6 +20,9 @@ const SecondContainer = styled("div")(({ theme }) => ({
   boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.3)",
   backgroundColor: "#fff",
   padding: "20px",
+  [theme.breakpoints.down("sm")]: {
+    width: "100%",
+  },
 }));
 
 const Tittle = styled("h1")(({ theme }) => ({
@@ -34,17 +40,32 @@ const TimerContainer = styled("div")(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  [theme.breakpoints.down("sm")]: {
+    padding: "0" , 
+  },
+  
 }));
 const TimeBox = styled("div")(({ theme }) => ({
+
   width: "30%",
   margin: "auto",
   backgroundColor: "#fff",
   padding: "20px",
   textAlign: "center",
+  [theme.breakpoints.down("sm")]: {
+    padding: "10px",
+  },
+  
 }));
 const TimeName = styled("h6")(({ theme }) => ({
   color: "#81c0ff",
   fontWeight: "bold",
+  [theme.breakpoints.down("xs")]: {
+    fontSize: "13px",
+  },
+  [theme.breakpoints.down("s")]: {
+    fontSize: "10px",
+  },
 }));
 const TimeUnit = styled("div")(({ theme }) => ({
   fontSize: "80px",
@@ -56,12 +77,33 @@ const TimeUnit = styled("div")(({ theme }) => ({
   color: "#706f84",
   fontWeight: "bold",
   borderRadius: "10px",
+  display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "50px",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "25px",
+  },
+  [theme.breakpoints.down("s")]: {
+    fontSize: "20px",
+  },
+  
 }));
 
 const Colon = styled("div")(({ theme }) => ({
-  fontSize: "50px",
+  display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+
+    fontSize: "50px",
   color: "#81c0ff",
   fontWeight: "bold",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "30px",
+  },
 }));
 
 const ButtonsContainer = styled("div")(({ theme }) => ({
@@ -70,6 +112,7 @@ const ButtonsContainer = styled("div")(({ theme }) => ({
   height: "100px",
   display: "flex",
   alignItems: "center",
+ 
 }));
 const Button = styled("div")(({ theme }) => ({
   fontWeight: "bold",
@@ -97,6 +140,20 @@ const Button = styled("div")(({ theme }) => ({
       backgroundColor: "#f34571db",
     },
   },
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "15px",
+    "&.start": {
+        padding: "35px",
+        fontSize: "20px",
+    },
+  },
+  [theme.breakpoints.down("s")]: {
+    fontSize: "10px",
+    "&.start": {
+        fontSize: "17px",
+    },
+  },
+  
 }));
 
 const Timer = () => {
@@ -144,7 +201,7 @@ const Timer = () => {
     <>
       <Container>
         <SecondContainer>
-          <Tittle>Timer⏱</Tittle>
+          <Tittle>Timer</Tittle>
           <TimerContainer>
             <TimeBox>
               <TimeName>Hours</TimeName>
